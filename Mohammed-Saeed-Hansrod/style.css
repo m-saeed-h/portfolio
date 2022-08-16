@@ -2,19 +2,23 @@
   --bg-color: #2f2f31;
   --main-color: #03a2a2;
   --secondary-color: #454547;
+  --tertiary-color: #e8e4e2;
   --typewriterSpeed: 5s;
   --typewriterCharacters: 24;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Roboto-med;
+  src: url(font/Roboto-Medium.ttf);
+
+  font-family: Roboto-light;;
   src: url(font/Roboto-Light.ttf);
 }
 
 body {
   /* background-image: url(images/47.jpg); */
   /* background-color: #454547; */
-  background-color: #2f2f31;
+  background-color: var(--bg-color);
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
@@ -24,12 +28,12 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #454547;
+  background: var(--bg-color);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #03a2a2;
+  background: var(--main-color);
 }
 
 /* Handle on hover  */
@@ -46,6 +50,7 @@ body {
   left: 0;
   width: 180px;
   border-radius: 0px 20px 20px 0px;
+  overflow: hidden;
 }
 
 #static-left-nav-section ul {
@@ -55,7 +60,7 @@ body {
 #static-left-nav-section a {
   position: relative;
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
   font-size: 17px;
   border-top: 1px solid #03a2a2;
   display: table;
@@ -65,9 +70,13 @@ body {
 }
 
 #static-left-nav-section a:hover {
-  color: #03a2a2;
+  color: var(--main-color);
   font-size: 20px;
   border-top: 1px solid #03a2a2;
+}
+
+@media screen {
+  
 }
 
 #static-right-nav-section {
@@ -79,6 +88,7 @@ body {
   right: 0;
   width: 100px;
   margin-top: 10px;
+
 }
 
 #static-right-nav-section ul {
@@ -88,7 +98,7 @@ body {
 #static-right-nav-section a {
   position: relative;
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
   font-size: 17px;
   display: table;
   padding-top: 15px;
@@ -118,13 +128,14 @@ body {
   bottom: 0%;
   margin-top: 180px;
   margin-left: 300px;
-  color: #e8e4e2;
+  color: var(--tertiary-color);
   text-align: justify;
   width: 720px;
 }
 
 #intro-section h3 {
   line-height: 0.1;
+  font-family: Roboto-light;
 }
 
 #intro-section h1 {
@@ -147,7 +158,7 @@ body {
 }
 
 #intro-section h1::before {
-  background-color: #454547;
+  background-color: var(--secondary-color);
   animation: typewriter is ease forwards;
 }
 
@@ -166,7 +177,7 @@ body {
 }
 
 .subtitle {
-  color: #03a2a2;
+  color: var(--main-color);
   font-size: 2rem;
   font-weight: 400;
   opacity: 0;
@@ -194,7 +205,7 @@ body {
 }
 
 #intro-section b {
-  color: #03a2a2;
+  color: var(--main-color);
 }
 
 #intro-section p {
@@ -202,13 +213,13 @@ body {
 }
 
 #intro-section button {
-  /* background-color: #454547; */
-  background-color: #2f2f31;
+  /* background-color: var(--secondary-color); */
+  background-color: var(--bg-color);
   font-size: 20px;
   padding: 20px;
   border-radius: 5px;
   border: #03a2a2 solid 2px;
-  color: #03a2a2;
+  color: var(--main-color);
   font-weight: 500;
 }
 
@@ -217,7 +228,7 @@ body {
 }
 
 #intro-section button:hover {
-  background-color: #454547;
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
@@ -225,13 +236,13 @@ body {
   /* position: absolute; */
   margin-left: 300px;
   margin-top: 200px;
-  color: #e8e4e2;
+  color: var(--tertiary-color);
   width: 900px;
   padding-bottom: 45%;
 }
 
 #aboutme-section .section-title {
-  color: #03a2a2;
+  color: var(--main-color);
   font-size: 50px;
   position: absolute;
  
