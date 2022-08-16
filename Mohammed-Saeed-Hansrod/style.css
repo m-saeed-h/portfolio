@@ -1,6 +1,7 @@
 :root {
+  /* --bg-color: #2f2f31; */
   --bg-color: #2f2f31;
-  --main-color: #03a2a2;
+  --main-color: #03a2a2; 
   --secondary-color: #454547;
   --tertiary-color: #e8e4e2;
   --typewriterSpeed: 5s;
@@ -170,7 +171,7 @@ body {
 
 #intro-section h1::after {
   width: 0.125em;
-  background: #03a2a2;
+  background: var(--main-color);
   animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
