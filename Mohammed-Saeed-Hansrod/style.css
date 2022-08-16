@@ -1,21 +1,45 @@
 :root {
-    --bg-color: #454547;
-    --typewriterSpeed: 5s;
-    --typewriterCharacters: 24;
-  }
-  
+  --bg-color: #2f2f31;
+  --main-color: #03a2a2;
+  --secondary-color: #454547;
+  --typewriterSpeed: 5s;
+  --typewriterCharacters: 24;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(font/Roboto-Light.ttf);
+}
 
 body {
   /* background-image: url(images/47.jpg); */
-  background-color: #454547;
-  /* background-color: #2F2F31; */
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  /* background-color: #454547; */
+  background-color: #2f2f31;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #454547;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #03a2a2;
+}
+
+/* Handle on hover  */
+/* ::-webkit-scrollbar-thumb:hover {
+  /* background: #555; 
+} */
 
 #static-left-nav-section {
   /* background-color: #2f2f31; */
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -48,7 +72,7 @@ body {
 
 #static-right-nav-section {
   /* background-color: #2f2f31; */
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 30%;
@@ -69,21 +93,20 @@ body {
   display: table;
   padding-top: 15px;
   padding-bottom: 10px;
-  
 }
 
-#static-right-nav-section img:hover{
-    height: 30px;
+#static-right-nav-section img:hover {
+  height: 30px;
 }
 
-#static-right-nav-section .topline{
+#static-right-nav-section .topline {
   border-right: #03a2a2 1px solid;
   height: 115%;
   width: 2px;
   margin-left: 50px;
 }
 
-#static-right-nav-section .bottomline{
+#static-right-nav-section .bottomline {
   border-right: #03a2a2 1px solid;
   height: 115%;
   width: 2px;
@@ -91,6 +114,8 @@ body {
 }
 
 #intro-section {
+  top: 0%;
+  bottom: 0%;
   margin-top: 180px;
   margin-left: 300px;
   color: #e8e4e2;
@@ -102,8 +127,6 @@ body {
   line-height: 0.1;
 }
 
-
-
 #intro-section h1 {
   /* line-height: 0.5;
   font-size: 50px; */
@@ -114,73 +137,73 @@ body {
 }
 
 #intro-section h1::before,
-#intro-section h1::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-#intro-section h1::before{
-    background-color: #454547;
-    animation: typewriter is ease forwards;
+#intro-section h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #intro-section h1::before {
-    background: var(--bg-color);
-    animation: typewriter var(--typewriterSpeed)
-      steps(var(--typewriterCharacters)) 1s forwards;
+  background-color: #454547;
+  animation: typewriter is ease forwards;
+}
+
+#intro-section h1::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+#intro-section h1::after {
+  width: 0.125em;
+  background: #03a2a2;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+  color: #03a2a2;
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
   }
-  
-  #intro-section h1::after {
-    width: 0.125em;
-    background: #03a2a2;
-    animation: typewriter var(--typewriterSpeed)
-        steps(var(--typewriterCharacters)) 1s forwards,
-      blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
   }
-  
-  .subtitle {
-    color: #03a2a2;
-    font-size: 2rem;
-    font-weight: 400;
-    opacity: 0;
-    transform: translateY(3rem);
-    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes typewriter {
-    to {
-      left: 100%;
-    }
-  }
-  
-  @keyframes blink {
-    to {
-      background: transparent;
-    }
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
 
 #intro-section b {
   color: #03a2a2;
 }
 
 #intro-section p {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 #intro-section button {
-  background-color: #454547;
+  /* background-color: #454547; */
+  background-color: #2f2f31;
   font-size: 20px;
   padding: 20px;
   border-radius: 5px;
@@ -194,6 +217,42 @@ body {
 }
 
 #intro-section button:hover {
-  background-color: #2f2f31;
+  background-color: #454547;
   cursor: pointer;
+}
+
+#aboutme-section {
+  /* position: absolute; */
+  margin-left: 300px;
+  margin-top: 200px;
+  color: #e8e4e2;
+  width: 900px;
+  padding-bottom: 45%;
+}
+
+#aboutme-section .section-title {
+  color: #03a2a2;
+  font-size: 50px;
+  position: absolute;
+ 
+}
+
+#aboutme-section .aboutme-container {
+  width: 400px;
+  padding-top: 100px;
+  font-size: 18px;
+  float: left;
+}
+
+#aboutme-section .aboutme-container li {
+  list-style-image: url("images/arrow-right1.svg");
+  padding: 5px;
+}
+
+#aboutme-section .myimage-section {
+  max-width: 40%;
+  max-height: 40%;
+  margin-top: 15%;
+  float: right;
+  border-radius: 20px;
 }
