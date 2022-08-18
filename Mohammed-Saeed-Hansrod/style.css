@@ -29,7 +29,7 @@
 * {
   /* background-image: url(images/47.jpg); */
   /* background-color: #454547; */
-
+  box-sizing: border-box;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   /* background-color: #1D1E22; */
   cursor: url("images/mouse-pointer.svg"), auto;
@@ -38,13 +38,13 @@
 body {
   background-color: var(--bg-color);
 
-  animation: fadeBackground 6s;
+  animation: fadeBackground 10s;
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeBackground {
   from {
-    background-color: var(--main-color);
+    background-color: #2A3D3F;
   }
   to {
     background-color: var(--bg-color);
@@ -232,10 +232,12 @@ body {
 #intro-section h1::before {
   background-color: var(--secondary-color);
   animation: typewriter is ease forwards;
+  
 }
 
 #intro-section h1::before {
-  background: var(--bg-color);
+  background: #2A3D3F;
+  
   animation: typewriter var(--typewriterSpeed)
     steps(var(--typewriterCharacters)) 1s forwards;
 }
@@ -260,6 +262,17 @@ body {
 @keyframes typewriter {
   to {
     left: 100%;
+  }
+
+ 
+}
+
+@keyframes backgroundfade {
+  from {
+    background-color: #2A3D3F;
+  }
+  to {
+    background-color: var(--bg-color);
   }
 }
 
@@ -428,9 +441,10 @@ body {
 
 .card:hover{
   cursor: url("images/droplet.svg"), auto;
-  transform: scale(1.1);
+  transform: scale(1.05);
   transform-origin: center;
   transition: transform 250ms ease-in-out;
+  background-color: #2A3D3F;
 }
 
 .image{
@@ -442,8 +456,18 @@ body {
 
 footer{
   margin-top: 100px;
+  margin-bottom: 50px;
   width: 100%;
   text-align: center;
   font-size: 10px;
   color: var(--main-color);
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 250ms ease-in;
 }
+
+.footer{
+  opacity: 1;
+  transform: scale(1);
+}
+
