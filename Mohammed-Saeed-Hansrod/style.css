@@ -26,26 +26,29 @@
   }
 }
 
-
 * {
   /* background-image: url(images/47.jpg); */
   /* background-color: #454547; */
-  
+
   font-family: Roboto, Arial, Helvetica, sans-serif;
   /* background-color: #1D1E22; */
   cursor: url("images/mouse-pointer.svg"), auto;
 }
 
-body{
+body {
   background-color: var(--bg-color);
- 
+
   animation: fadeBackground 6s;
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeBackground {
-  from { background-color: #1b4242; }
-  to { background-color: var(--bg-color); }
+  from {
+    background-color: var(--main-color);
+  }
+  to {
+    background-color: var(--bg-color);
+  }
 }
 
 #main-container {
@@ -57,13 +60,11 @@ body{
 
 ::-webkit-scrollbar {
   width: 10px;
-  
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
-  
 }
 
 /* Handle */
@@ -80,10 +81,10 @@ body{
   background-color: var(--secondary-color);
   opacity: 0.95;
 
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 1; 
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
@@ -309,7 +310,7 @@ body{
   margin-top: 200px;
   color: var(--tertiary-color);
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
   text-align: justify;
 }
 
@@ -334,7 +335,7 @@ body{
   width: 100%;
 }
 
-#aboutme-section .myimage-section {
+/* #aboutme-section .myimage-section {
   display: flex;
 
   margin-left: auto;
@@ -342,10 +343,107 @@ body{
   max-width: 30%;
   max-height: 30%;
   border-radius: 20px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 #aboutme-section .myimage-section:hover {
   transition: 1;
   transform: scale(1.040);
   transform-origin: center;
+} */
+
+
+.my-project-title {
+  color: var(--main-color);
+  font-size: 40px;
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 15%;
+}
+
+/* #my-projects-section #my-project-container {
+  background-color: var(--secondary-color);
+  margin: 10px;
+  margin-top: 100px;
+  border: #03a2a2 2px solid;
+  border-radius: 10px;
+  min-width: 10%;
+  height: 350px;
+  text-align: center;
+  display: flexbox;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+} */
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px 15px;
+  
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+  margin-top: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  cursor: url("images/droplet.svg"), auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  border: #03a2a2 2px solid;
+  border-radius: 10px;
+  color: var(--tertiary-color);
+  
+}
+
+.card a{
+  cursor: url("images/droplet.svg"), auto;
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+.card:hover{
+  cursor: url("images/droplet.svg"), auto;
+  transform: scale(1.1);
+  transform-origin: center;
+  transition: transform 250ms ease-in-out;
+}
+
+.image{
+  height: 100%;
+  width: 100%;
+  border: #03a2a2 2px solid;
+  border-radius: 10px;
+}
+
+footer{
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: var(--main-color);
 }
