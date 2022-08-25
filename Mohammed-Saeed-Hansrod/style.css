@@ -448,8 +448,8 @@ body {
 }
 
 .image{
-  height: 100%;
-  width: 100%;
+  max-height: 100px;
+  max-width: 200px;
   border: #03a2a2 2px solid;
   border-radius: 10px;
 }
